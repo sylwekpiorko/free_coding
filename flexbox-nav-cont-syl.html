@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Flexbox</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<style type="text/css">
+		body{
+			background-color: #F5D76E;
+		}
+
+		nav{
+			font-family: roboto;
+			/*background-color: #eee;*/
+			margin: 30px auto;
+			width: 100%;
+			height: 500px;
+			display: flex;
+			flex-direction: column;
+			align-items:stretch;
+			border-radius: 10px;
+			padding: 0;	
+		}
+				
+		a{
+			text-decoration: none;
+			color: white;
+			flex:1;
+			height: 30px;
+			font-family: Dosis;
+			padding:20px 20px 20px 20px;
+			text-align: center;
+			font-size: 2em;
+			border-bottom:1px solid white;
+
+		}
+		#logoNav{
+			font-size: 2em;
+			font-weight: bold;
+			}
+		#landing{
+			display: flex;
+			flex-direction: column;
+		}
+		#landing-message{
+			width: 600px;
+			font-family: Dosis;
+			font-size: 4em;
+			text-align: center;
+			padding: 50px;
+		}
+		.cards{
+
+			/*display: flex;*/
+			/*justify-content: center;*/
+		}
+		.card{
+			width: 520px;
+			height: 650px;
+
+			display: flex;
+			background-color: #eee;
+			margin: 10px;
+			flex-direction: column;
+			padding: 4px 4px;
+
+		}
+		
+		.card h2{
+			width: 100%;
+			font-family: dosis;
+			font-size: 4em;
+			padding: 20px;
+
+		}
+		.card p{
+			font-family: dosis;
+			font-size: 22px;
+			padding: 20px;
+		}
+		.card img{
+			transform: scale(.9, .9);
+		}
+
+		@media screen and (min-width: 700px){
+			nav{
+			/*Code goes here*/
+			
+				display: flex;
+				flex-direction: row;
+				align-items: baseline;
+				height: 50px;
+			}
+			a{
+			/*Code goes here*/
+
+				min-width: 25px;
+				font-size: 1em;
+				border: none;
+				flex: 1;
+			}
+			#logoNav{
+			/*Code goes here*/
+
+				min-width: 320px;
+				text-align: left;
+				flex: 4;
+			}
+			#landing{
+				height: 500px;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				flex-direction: row;
+			}
+			.cards{
+				display: flex;
+				flex-flow: row wrap;
+			}
+			.card{
+				display: flex;
+				align-items: stretch;
+			}
+			
+		}
+
+		</style>
+</head>
+<body>
+
+	<nav>
+		
+			<a id="logoNav">CODE INSTITUTE</a>
+			<a href="#">Home</a>
+			<a href="#">Projects</a>
+			<a href="#">About</a>
+			<a href="#">Contact</a>
+			<a href="#">Photos</a>
+		
+
+	</nav>
+	<section id="landing">
+		<div id="landing-message">
+			<h2>Make Creative Clever Fun Apps. Simple.</h2>
+		</div>
+		
+		<div id="landing-graphics">
+			<figure>
+			<img src="img/laptop.png" alt="laptop image">
+			</figure>	
+		</div>
+	</section>
+	<section class="cards">
+		<div class="card">
+			<img src="img/graphic1.png" alt="design pic">
+			<h2>Remote learning</h2>
+			<p>Once you join a Code Institute Bootcamp you will be taken on an accelerated contextualiased learning path across 3 streams.</p>
+		</div>
+		<div class="card">
+			<img src="img/graphic2.png" alt="design pic">
+			<h2>Remote learning</h2>
+			<p>Once you join a Code Institute Bootcamp you will be taken on an accelerated contextualiased learning path across 3 streams.</p>
+		</div>
+		<div class="card">
+			<img src="img/graphic3.png" alt="design pic">
+			<h2>Remote learning</h2>
+			<p>Once you join a Code Institute Bootcamp you will be taken on an accelerated contextualiased learning path across 3 streams.
+			Once you join a Code Institute Bootcamp you will be taken on an accelerated contextualiased learning path across 3 streams.</p>
+		</div>
+		<?php
+		    $user = $_SERVER['HTTP_USER_AGENT'];
+		    $ip = $_SERVER["REMOTE_ADDR"];
+		    echo "<p>You are viewing this page using:<br /><b>$user</b>.</p>\n";
+		    echo "<p>Your IP Address is:<br /><b>$ip</b>.</p>\n";
+		?>
+	</section>
+
+
+</body>
+</html>
