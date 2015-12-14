@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+  <!--
+         Form with HTML5 tags and basic CSS
+      -->
+  <style type="text/css">
+    body{
+         font-family: 'Roboto', sans-serif;
+      }
+         #container{
+            width: 550px;
+            margin: auto;
+
+         }
+
+         p{
+            /*text-align: center;*/
+         }
+
+         legend{
+            font-size: 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #999;
+            padding: 4px 15px;
+            margin-bottom: 20px;
+         }
+            
+         label.field{
+            display: block;
+            text-align: right;
+            width: 100px;
+            float: left;
+
+         }
+
+         input , select{
+            width: 200px;
+            border-radius: 5px;
+            padding: 6px 8px;
+            margin-bottom: 10px;
+         }
+
+         .field{
+            padding: 6px 8px;
+         }
+
+         #currency{
+             width: 220px;
+             border-radius: 5px;
+             padding: 6px 8px;
+         }
+
+         fieldset{
+            width: 450px;
+            border: 1px solid #999;
+            border-radius: 20px;
+            clear: both;
+            padding: 20px;
+            margin-bottom: 100px;
+            background-color:rgba(129, 187, 201,.2);
+
+         }
+         .button{
+            margin-left: 30%;
+            margin-top: 5%;
+        }
+
+        :focus{
+            background-color: #FFECE9;
+        }
+
+        .checkbox{
+            width: 30px;
+            display: block;
+        }
+
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <fieldset class="field" action="server_side_script.php" method="post">
+      
+        <legend>Registration</legend>
+        
+        <label class="field">* Firstname:</label>
+        <input type="text" name="fname" placeholder="Your first name please"/>
+        
+        <label class="field">Password:</label>
+        <input type="password" name="password" placeholder="********"/>
+        
+        <label class="field">* Email:</label>
+        <input type="email" name="email" autofocus placeholder="ex: abcd@yahoo.com"/>
+        
+        <label class="field">Eircode:</label>
+        <input type="text" pattern="[0-9A-Za-z]{7}" title="eircode expected format ex.A1B23FG" name
+        ="feircode" placeholder="ex: 1A2 B3C4" />
+        
+        <label class="field">Telephone:</label>
+        <input type="tel" pattern="[0-9]{10}" title="mobile telephone number expected beginning 08********" name="ftelephone" size=4 placeholder="ex: 08********" />
+        
+        <label class="field">Passport:</label>
+        <input type="text" pattern="[0-9]{7}[A-Za-z]{1}" title="Seven numbers followed by a single upper or lower case letter." name="fpassport" placeholder="ex: 1234567 ABC" />
+        
+        <label class="field">Website:</label>
+        <input type="url" name="website" placeholder="ex: www.abcd.com" />
+
+        <label class="field">Credit card:</label>
+        <input type="text" pattern="[0-9]{16}" title="Sixteen digits." name="fcreditcard" placeholder="ex: 1234 5678 9012 3456"/>
+
+        <label class="field">Age:</label>
+        <input type="number" min="8" max="120" name="fage" placeholder="(8-120)"/ >
+
+        <label class="field">Flight date:</label>
+        <input type="date" name="fdate" />
+
+        <p>Would You like:</p>
+            <input type="checkbox" value="starter" />Starter
+            <input type="checkbox" value="main" />Main
+            <input type="checkbox" value="desert" />Desert
+
+        <p>Gender:</p>
+            <input type="radio" name="gender" value="Male" />Male
+            <input type="radio" name="gender" value="Female" />Female
+            <input type="radio" name="gender" value="Other" />Other
+        <p></p>
+
+        <label class="field" for="sign">Zodiac sign:</label>
+        <select id="sign">
+            <option value="aries">Aries</option>
+            <option value="taurus">Taurus</option>
+            <option value="gemini">Gemini</option>
+            <option value="cancer">Cancer</option>
+            <option value="leo">Leo</option>   
+            <option value="virgo">Virgo</option>
+        </select>
+        <p></p>
+
+        <label class="field">Music genre:</label>
+        <input list="genres" name="fgenres" placeholder="select music genre">
+            <datalist id="genres">
+                <option value="pop"></option>
+                <option value="rock"></option>
+                <option value="soul"></option>
+                <option value="jazz"></option>
+            </datalist>
+
+        <input class="button" type="submit" value="submit" />
+
+        <p>* (mandatory field)</p>
+
+    </fieldset>
+  </div>
+
+<p>Entered date:</p>
+</body>
+
+</html>
